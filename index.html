@@ -72,7 +72,6 @@
     .hero::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80') center/cover;opacity:0.15}
     .hero-pattern{position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px}
     .hero-content{position:relative;z-index:2;max-width:700px;padding-top:80px}
-    .hero-label{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(201,169,98,0.15);border:1px solid rgba(201,169,98,0.3);border-radius:30px;color:var(--color-accent);font-size:13px;font-weight:500;margin-bottom:28px}
     .hero-title{font-size:52px;font-weight:700;line-height:1.3;color:var(--color-white);margin-bottom:24px}
     .hero-title span{color:var(--color-accent)}
     .hero-desc{font-size:17px;line-height:1.9;color:rgba(255,255,255,0.8);margin-bottom:40px}
@@ -167,7 +166,7 @@
     .contact-info-icon{flex-shrink:0;width:48px;height:48px;background:var(--color-gray-50);border-radius:8px;display:flex;align-items:center;justify-content:center}
     .contact-info-icon i{width:20px;height:20px;color:var(--color-accent)}
     .contact-info-text h4{font-size:14px;font-weight:600;color:var(--color-primary);margin-bottom:4px}
-    .contact-info-text p{font-size:14px;color:var(--color-text-light)}
+    .contact-info-text p{font-size:14px;color:var(--text-light)}
     .contact-form{background:var(--color-white);border-radius:12px;padding:40px;box-shadow:var(--shadow-sm)}
     .form-group{margin-bottom:20px}
     .form-label{display:block;font-size:14px;font-weight:500;color:var(--color-primary);margin-bottom:8px}
@@ -237,19 +236,9 @@
       .footer-grid{grid-template-columns:1fr;gap:32px}
       .footer-bottom{flex-direction:column;gap:20px;text-align:center}
     }
-    @media(max-width:390px){
-      .container{padding:0 16px}
-      .hero-buttons{flex-direction:column}
-      .hero-buttons .btn{width:100%}
-      .cta-buttons{flex-direction:column}
-      .cta-buttons .btn{width:100%}
-      .contact-info,.contact-form{padding:24px}
-      .service-card{padding:32px 24px}
-    }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="logo">
@@ -278,21 +267,16 @@
         <li><a href="#company" class="nav-link" onclick="toggleMobileMenu()">会社概要</a></li>
         <li><a href="#contact" class="nav-link" onclick="toggleMobileMenu()">お問い合わせ</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary header-cta" onclick="toggleMobileMenu()">無料相談キャリア相談</a>
+      <a href="#contact" class="btn btn-primary header-cta" onclick="toggleMobileMenu()">無料キャリア相談</a>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-pattern"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-label">
-          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
-          新しいキャリアをあなたと共に
-        </div>
         <h1 class="hero-title">次のキャリアへ、<br><span>確かな一歩</span>を。</h1>
-        <p class="hero-desc">NEXUS CAREERは一人ひとりの可能性を最大化する人材サービス会社です。豊富な求人情報と専任コンサルタントのサポートであなたの理想のキャリアを実現します。</p>
+        <p class="hero-desc">NEXUS CAREERは、一人ひとりの可能性を最大化する人材サービス会社です。豊富な求人情報と専任コンサルタントのサポートで、あなたの理想のキャリアを実現します。</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">
             <i data-lucide="mail" style="width:18px;height:18px;"></i>無料キャリア相談
@@ -319,7 +303,6 @@
     </div>
   </section>
 
-  <!-- About -->
   <section class="section about" id="about">
     <div class="container">
       <div class="about-grid">
@@ -330,7 +313,7 @@
         <div class="about-content">
           <span class="section-label">About Us</span>
           <h2 class="section-title">一人ひとりの<br>未来に寄り添う</h2>
-          <p class="section-desc">私たちは「人と企業の最適なマッチング」を使命に2026年に設立されました。転職は人生の大きな転機。だからこそ、数字だけでなく、その人の価値観やビジョンを大切にしたサポートを提供します。</p>
+          <p class="section-desc">私たちは「人と企業の最適なマッチング」を使命に、2026年に設立されました。転職は人生の大きな転機です。だからこそ数字だけでなく、その人の価値観やビジョンを大切にしたサポートを提供します。</p>
           <div class="about-features">
             <div class="about-feature">
               <div class="about-feature-icon"><i data-lucide="users"></i></div>
@@ -343,14 +326,14 @@
               <div class="about-feature-icon"><i data-lucide="building-2"></i></div>
               <div class="about-feature-text">
                 <h4>非公開求人多数</h4>
-                <p>大手企業・優良企業の独占求人をご紹介</p>
+                <p>大手企業・優良企業の独占求人をご紹介します</p>
               </div>
             </div>
             <div class="about-feature">
               <div class="about-feature-icon"><i data-lucide="shield-check"></i></div>
               <div class="about-feature-text">
                 <h4>入社後フォロー</h4>
-                <p>入社後も定期面談で定着をサポート</p>
+                <p>入社後も定期的な面談で定着をサポートします</p>
               </div>
             </div>
           </div>
@@ -359,7 +342,6 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section services" id="services">
     <div class="container">
       <div class="services-header">
@@ -377,20 +359,19 @@
         <div class="service-card">
           <div class="service-icon"><i data-lucide="users"></i></div>
           <h3 class="service-title">人材紹介</h3>
-          <p class="service-desc">企業様の採用課題を解決。ミスマッチを防ぐ独自のマッチングメソッドで最適な人材をご紹介します。</p>
+          <p class="service-desc">企業様の採用課題を解決。ミスマッチを防ぐ独自のマッチングメソッドで、最適な人材をご紹介します。</p>
           <a href="#contact" class="service-link">詳しく見る<i data-lucide="arrow-right"></i></a>
         </div>
         <div class="service-card">
           <div class="service-icon"><i data-lucide="graduation-cap"></i></div>
           <h3 class="service-title">キャリア研修</h3>
-          <p class="service-desc">新入社員研修から管理職向けリーダーシップ研修まで。組織の成長を支える人材育成をサポート。</p>
+          <p class="service-desc">新入社員研修から管理職向けリーダーシップ研修まで、組織の成長を支える人材育成をサポートします。</p>
           <a href="#contact" class="service-link">詳しく見る<i data-lucide="arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Strengths -->
   <section class="section strengths">
     <div class="container">
       <div class="strengths-header">
@@ -403,7 +384,7 @@
           <div class="strength-number">98<span>%</span></div>
           <div>
             <div class="strength-label">転職成功率</div>
-            <p class="strength-desc">丁寧なヒアリングと的確なマッチングで高い成功率を実現</p>
+            <p class="strength-desc">丁寧なヒアリングと的確なマッチングで、高い成功率を実現しています</p>
           </div>
         </div>
         <div class="strength-card">
@@ -417,66 +398,64 @@
           <div class="strength-number">0<span>円</span></div>
           <div>
             <div class="strength-label">完全無料</div>
-            <p class="strength-desc">求職者の方は全サービスを無料でご利用いただけます</p>
+            <p class="strength-desc">求職者の方は、すべてのサービスを無料でご利用いただけます</p>
           </div>
         </div>
         <div class="strength-card">
           <div class="strength-number">24<span>h</span></div>
           <div>
             <div class="strength-label">対応時間</div>
-            <p class="strength-desc">オンライン面談でお忙しい方も時間を選ばず相談可能</p>
+            <p class="strength-desc">オンライン面談により、お忙しい方も時間を選ばず相談可能です</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
   <section class="section process" id="process">
     <div class="container">
       <div class="process-header">
         <span class="section-label">Process</span>
         <h2 class="section-title">ご利用の流れ</h2>
-        <p class="section-desc">登録から内定まで専任コンサルタントが丁寧にサポートします。</p>
+        <p class="section-desc">登録から内定まで、専任コンサルタントが丁寧にサポートします。</p>
       </div>
       <div class="process-timeline">
         <div class="process-step">
           <div class="process-step-number"><span>01</span></div>
           <div>
             <h4 class="process-step-title">無料登録</h4>
-            <p class="process-step-desc">Webフォームから3分で完了。経歴書は後からでも大丈夫です。</p>
+            <p class="process-step-desc">Webフォームから3分で完了。職務経歴書は後からでも大丈夫です。</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-step-number"><span>02</span></div>
           <div>
             <h4 class="process-step-title">キャリア面談</h4>
-            <p class="process-step-desc">専任コンサルタントがあなたの希望やキャリアを丁寧にヒアリング。</p>
+            <p class="process-step-desc">専任コンサルタントが、あなたの希望やキャリアを丁寧にヒアリングします。</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-step-number"><span>03</span></div>
           <div>
             <h4 class="process-step-title">求人紹介</h4>
-            <p class="process-step-desc">非公開求人を含む最適なポジションをご提案します。</p>
+            <p class="process-step-desc">非公開求人を含む、最適なポジションをご提案します。</p>
           </div>
         </div>
         <div class="process-step">
           <div class="process-step-number"><span>04</span></div>
           <div>
             <h4 class="process-step-title">内定・入社</h4>
-            <p class="process-step-desc">面接対策から条件交渉、入社後フォローまで徹底サポート。</p>
+            <p class="process-step-desc">面接対策から条件交渉、入社後のフォローまで徹底サポートします。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">あなたの新しいキャリアを<br>一緒に見つけませんか?</h2>
+        <h2 class="cta-title">あなたの新しいキャリアを<br>一緒に見つけませんか？</h2>
         <p class="cta-desc">まずは無料相談から。専任コンサルタントがあなたの可能性を引き出します。</p>
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-primary">
@@ -490,7 +469,6 @@
     </div>
   </section>
 
-  <!-- Company -->
   <section class="section company" id="company">
     <div class="container">
       <div class="company-header">
@@ -526,7 +504,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact-header">
@@ -595,7 +572,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
