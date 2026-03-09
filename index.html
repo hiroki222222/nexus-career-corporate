@@ -63,9 +63,15 @@
     .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-accent);transition:var(--transition)}
     .nav-link:hover{color:var(--color-primary)}
     .nav-link:hover::after{width:100%}
-    .header-cta{padding:12px 24px;font-size:13px}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
     .mobile-menu-btn i{width:24px;height:24px;color:var(--color-primary)}
+
+    /* 追加：ヘッダー用の新しいボタン群 */
+    .header-buttons {display:flex;align-items:center;gap:12px}
+    .btn-header-outline {display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;font-size:13px;font-weight:600;color:var(--color-primary);background-color:var(--color-white);border:2px solid var(--color-primary);border-radius:50px;transition:var(--transition)}
+    .btn-header-outline:hover {background-color:rgba(15, 44, 77, 0.05);transform:translateY(-2px)}
+    .btn-header-solid {display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;font-size:13px;font-weight:600;color:var(--color-white);background-color:var(--color-primary);border:2px solid var(--color-primary);border-radius:50px;transition:var(--transition)}
+    .btn-header-solid:hover {background-color:var(--color-primary-light);border-color:var(--color-primary-light);transform:translateY(-2px)}
 
     /* Hero */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--color-primary) 0%,#0A1F35 100%);overflow:hidden}
@@ -166,7 +172,7 @@
     .contact-info-icon{flex-shrink:0;width:48px;height:48px;background:var(--color-gray-50);border-radius:8px;display:flex;align-items:center;justify-content:center}
     .contact-info-icon i{width:20px;height:20px;color:var(--color-accent)}
     .contact-info-text h4{font-size:14px;font-weight:600;color:var(--color-primary);margin-bottom:4px}
-    .contact-info-text p{font-size:14px;color:var(--text-light)}
+    .contact-info-text p{font-size:14px;color:var(--color-text-light)}
     .contact-form{background:var(--color-white);border-radius:12px;padding:40px;box-shadow:var(--shadow-sm)}
     .form-group{margin-bottom:20px}
     .form-label{display:block;font-size:14px;font-weight:500;color:var(--color-primary);margin-bottom:8px}
@@ -197,7 +203,8 @@
     .mobile-menu.active{transform:translateY(0);opacity:1;visibility:visible}
     .mobile-menu .nav-list{flex-direction:column;gap:0}
     .mobile-menu .nav-link{display:block;padding:16px 0;border-bottom:1px solid var(--color-gray-100)}
-    .mobile-menu .header-cta{width:100%;margin-top:16px}
+    .mobile-header-buttons {display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+    .mobile-header-buttons a {width:100%;}
 
     /* Responsive */
     @media(max-width:1024px){
@@ -239,6 +246,7 @@
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
       <a href="#" class="logo">
@@ -251,9 +259,11 @@
           <li><a href="#services" class="nav-link">サービス</a></li>
           <li><a href="#process" class="nav-link">ご利用の流れ</a></li>
           <li><a href="#company" class="nav-link">会社概要</a></li>
-          <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
         </ul>
-        <a href="#contact" class="btn btn-primary header-cta">無料相談する</a>
+        <div class="header-buttons">
+          <a href="#contact" class="btn-header-outline">無料転職相談</a>
+          <a href="#contact" class="btn-header-solid">お問い合わせ</a>
+        </div>
       </nav>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
         <i data-lucide="menu"></i>
@@ -265,12 +275,15 @@
         <li><a href="#services" class="nav-link" onclick="toggleMobileMenu()">サービス</a></li>
         <li><a href="#process" class="nav-link" onclick="toggleMobileMenu()">ご利用の流れ</a></li>
         <li><a href="#company" class="nav-link" onclick="toggleMobileMenu()">会社概要</a></li>
-        <li><a href="#contact" class="nav-link" onclick="toggleMobileMenu()">お問い合わせ</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary header-cta" onclick="toggleMobileMenu()">無料キャリア相談</a>
+      <div class="mobile-header-buttons">
+        <a href="#contact" class="btn-header-outline" onclick="toggleMobileMenu()">無料転職相談</a>
+        <a href="#contact" class="btn-header-solid" onclick="toggleMobileMenu()">お問い合わせ</a>
+      </div>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-pattern"></div>
     <div class="container">
@@ -303,6 +316,7 @@
     </div>
   </section>
 
+  <!-- About -->
   <section class="section about" id="about">
     <div class="container">
       <div class="about-grid">
@@ -342,6 +356,7 @@
     </div>
   </section>
 
+  <!-- Services -->
   <section class="section services" id="services">
     <div class="container">
       <div class="services-header">
@@ -372,6 +387,7 @@
     </div>
   </section>
 
+  <!-- Strengths -->
   <section class="section strengths">
     <div class="container">
       <div class="strengths-header">
@@ -412,6 +428,7 @@
     </div>
   </section>
 
+  <!-- Process -->
   <section class="section process" id="process">
     <div class="container">
       <div class="process-header">
@@ -452,6 +469,7 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <div class="cta-content">
@@ -469,6 +487,7 @@
     </div>
   </section>
 
+  <!-- Company -->
   <section class="section company" id="company">
     <div class="container">
       <div class="company-header">
@@ -504,6 +523,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact-header">
@@ -572,6 +592,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
