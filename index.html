@@ -43,7 +43,7 @@
     .section{padding:100px 0}
     .section-label{font-family:var(--font-en);font-size:13px;font-weight:600;letter-spacing:0.15em;color:var(--color-accent);text-transform:uppercase;margin-bottom:12px}
     .section-title{font-size:32px;font-weight:700;line-height:1.4;margin-bottom:20px;color:var(--color-primary)}
-    .section-desc{font-size:15px;color:var(--color-text-light);max-width:600px}
+    .section-desc{font-size:15px;color:var(--color-text-light);max-width:850px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;font-family:var(--font-ja);font-size:14px;font-weight:500;border:none;border-radius:4px;cursor:pointer;transition:var(--transition)}
     .btn-primary{background:var(--color-primary);color:var(--color-white)}
     .btn-primary:hover{background:var(--color-primary-light);transform:translateY(-2px);box-shadow:var(--shadow-md)}
@@ -77,10 +77,13 @@
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--color-primary) 0%,#0A1F35 100%);overflow:hidden}
     .hero::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80') center/cover;opacity:0.15}
     .hero-pattern{position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px}
-    .hero-content{position:relative;z-index:2;max-width:700px;padding-top:80px}
-    .hero-title{font-size:52px;font-weight:700;line-height:1.3;color:var(--color-white);margin-bottom:24px}
+    .hero-content{position:relative;z-index:2;max-width:1000px;padding-top:80px}
+    .hero-title{font-size:52px;font-weight:700;line-height:1.3;color:var(--color-white);margin-bottom:24px;white-space:nowrap}
     .hero-title span{color:var(--color-accent)}
-    .hero-desc{font-size:17px;line-height:1.9;color:rgba(255,255,255,0.8);margin-bottom:40px}
+    /* 修正：hero-desc内の文章を綺麗に2行に分ける設定 */
+    .hero-desc{font-size:17px;line-height:1.9;color:rgba(255,255,255,0.8);margin-bottom:40px;max-width:780px}
+    .hero-desc span{display:inline-block} /* 文章のまとまりを維持 */
+    
     .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
     .hero-stats{display:flex;gap:48px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1)}
     .stat-item{text-align:left}
@@ -144,7 +147,7 @@
 
     /* CTA */
     .cta{background:linear-gradient(135deg,var(--color-primary) 0%,#0A1F35 100%);text-align:center;padding:80px 0}
-    .cta-content{max-width:600px;margin:0 auto}
+    .cta-content{max-width:800px;margin:0 auto}
     .cta-title{font-size:32px;font-weight:700;color:var(--color-white);margin-bottom:16px}
     .cta-desc{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:32px}
     .cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
@@ -217,12 +220,14 @@
       .mobile-menu-btn{display:block}
       .header-inner{height:70px}
       .hero{min-height:auto;padding:120px 0 80px}
-      .hero-title{font-size:32px}
-      .hero-desc{font-size:15px}
+      .hero-title{font-size:32px;white-space:normal}
+      .hero-desc{font-size:15px;max-width:none}
+      .hero-desc span{display:inline} /* モバイルではinlineに戻して自然に改行 */
       .hero-stats{flex-direction:column;gap:24px}
       .stat-number{font-size:32px}
       .section{padding:60px 0}
       .section-title{font-size:26px}
+      .section-desc{max-width:none}
       .about-grid{grid-template-columns:1fr;gap:40px}
       .about-image-accent{display:none}
       .services-grid{grid-template-columns:1fr}
@@ -288,8 +293,11 @@
     <div class="hero-pattern"></div>
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">次のキャリアへ、<br><span>確かな一歩</span>を。</h1>
-        <p class="hero-desc">NEXUS CAREERは、一人ひとりの可能性を最大化する人材サービス会社です。豊富な求人情報と専任コンサルタントのサポートで、あなたの理想のキャリアを実現します。</p>
+        <h1 class="hero-title">次のキャリアへ、<span>確かな一歩</span>を。</h1>
+        <p class="hero-desc">
+          <span>NEXUS CAREERは、一人ひとりの可能性を最大化する人材サービス会社です。</span>
+          <span>豊富な求人情報と専任コンサルタントのサポートで、あなたの理想のキャリアを実現します。</span>
+        </p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">
             <i data-lucide="mail" style="width:18px;height:18px;"></i>無料キャリア相談
@@ -326,7 +334,7 @@
         </div>
         <div class="about-content">
           <span class="section-label">About Us</span>
-          <h2 class="section-title">一人ひとりの<br>未来に寄り添う</h2>
+          <h2 class="section-title">一人ひとりの未来に寄り添う</h2>
           <p class="section-desc">私たちは「人と企業の最適なマッチング」を使命に、2026年に設立されました。転職は人生の大きな転機です。だからこそ数字だけでなく、その人の価値観やビジョンを大切にしたサポートを提供します。</p>
           <div class="about-features">
             <div class="about-feature">
@@ -473,7 +481,7 @@
   <section class="cta">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">あなたの新しいキャリアを<br>一緒に見つけませんか？</h2>
+        <h2 class="cta-title">あなたの新しいキャリアを一緒に見つけませんか？</h2>
         <p class="cta-desc">まずは無料相談から。専任コンサルタントがあなたの可能性を引き出します。</p>
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-primary">
