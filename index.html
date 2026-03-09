@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXUS CAREER（ネクサスキャリア）は、あなたの可能性を最大化する人材サービス会社です。転職支援・人材紹介・キャリアコンサルティングで、次のステージへ。">
+  <meta name="keywords" content="人材紹介, 転職支援, キャリアコンサルティング, 求人, 採用支援">
+  <title>NEXUS CAREER | 次のキャリアへ、確かな一歩を</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --color-primary:#0F2C4D;
+      --color-primary-light:#1A4A7A;
+      --color-accent:#C9A962;
+      --color-accent-light:#E5D4A8;
+      --color-white:#FFFFFF;
+      --color-gray-50:#F8F9FA;
+      --color-gray-100:#F1F3F5;
+      --color-gray-200:#E9ECEF;
+      --color-gray-500:#6C757D;
+      --color-gray-700:#495057;
+      --color-gray-900:#212529;
+      --color-text:#2D3436;
+      --color-text-light:#636E72;
+      --font-ja:'Noto Sans JP',sans-serif;
+      --font-en:'Inter',sans-serif;
+      --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+      --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg:0 10px 40px rgba(0,0,0,0.12);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-ja);font-size:16px;line-height:1.8;color:var(--color-text);background:var(--color-white);-webkit-font-smoothing:antialiased}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    ul{list-style:none}
+
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+    .section{padding:100px 0}
+    .section-label{font-family:var(--font-en);font-size:13px;font-weight:600;letter-spacing:0.15em;color:var(--color-accent);text-transform:uppercase;margin-bottom:12px}
+    .section-title{font-size:32px;font-weight:700;line-height:1.4;margin-bottom:20px;color:var(--color-primary)}
+    .section-desc{font-size:15px;color:var(--color-text-light);max-width:600px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;font-family:var(--font-ja);font-size:14px;font-weight:500;border:none;border-radius:4px;cursor:pointer;transition:var(--transition)}
+    .btn-primary{background:var(--color-primary);color:var(--color-white)}
+    .btn-primary:hover{background:var(--color-primary-light);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+    .btn-outline{background:transparent;color:var(--color-white);border:1px solid rgba(255,255,255,0.4)}
+    .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:var(--color-white)}
+
+    /* Header */
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);box-shadow:var(--shadow-sm)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-light) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center}
+    .logo-icon i{color:var(--color-white);width:22px;height:22px}
+    .logo-text{font-family:var(--font-en);font-size:20px;font-weight:700;color:var(--color-primary);letter-spacing:0.02em}
+    .nav{display:flex;align-items:center;gap:40px}
+    .nav-list{display:flex;gap:36px}
+    .nav-link{font-size:14px;font-weight:500;color:var(--color-gray-700);position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-accent);transition:var(--transition)}
+    .nav-link:hover{color:var(--color-primary)}
+    .nav-link:hover::after{width:100%}
+    .header-cta{padding:12px 24px;font-size:13px}
+    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+    .mobile-menu-btn i{width:24px;height:24px;color:var(--color-primary)}
+
+    /* Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--color-primary) 0%,#0A1F35 100%);overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80') center/cover;opacity:0.15}
+    .hero-pattern{position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px}
+    .hero-content{position:relative;z-index:2;max-width:700px;padding-top:80px}
+    .hero-label{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(201,169,98,0.15);border:1px solid rgba(201,169,98,0.3);border-radius:30px;color:var(--color-accent);font-size:13px;font-weight:500;margin-bottom:28px}
+    .hero-title{font-size:52px;font-weight:700;line-height:1.3;color:var(--color-white);margin-bottom:24px}
+    .hero-title span{color:var(--color-accent)}
+    .hero-desc{font-size:17px;line-height:1.9;color:rgba(255,255,255,0.8);margin-bottom:40px}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:48px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1)}
+    .stat-item{text-align:left}
+    .stat-number{font-family:var(--font-en);font-size:42px;font-weight:700;color:var(--color-white);line-height:1}
+    .stat-number span{font-size:18px;font-weight:500;color:var(--color-accent);margin-left:4px}
+    .stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px}
+
+    /* About */
+    .about{background:var(--color-gray-50)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .about-image{position:relative}
+    .about-image img{border-radius:8px;box-shadow:var(--shadow-lg)}
+    .about-image-accent{position:absolute;bottom:-30px;right:-30px;width:200px;height:200px;background:linear-gradient(135deg,var(--color-accent) 0%,var(--color-accent-light) 100%);border-radius:8px;z-index:-1}
+    .about-content .section-desc{margin-bottom:32px}
+    .about-features{display:flex;flex-direction:column;gap:20px}
+    .about-feature{display:flex;align-items:flex-start;gap:16px}
+    .about-feature-icon{flex-shrink:0;width:48px;height:48px;background:var(--color-white);border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+    .about-feature-icon i{width:22px;height:22px;color:var(--color-accent)}
+    .about-feature-text h4{font-size:15px;font-weight:600;color:var(--color-primary);margin-bottom:4px}
+    .about-feature-text p{font-size:14px;color:var(--color-text-light)}
+
+    /* Services */
+    .services-header{text-align:center;margin-bottom:60px}
+    .services-header .section-desc{margin:0 auto}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .service-card{background:var(--color-white);border-radius:12px;padding:40px 32px;box-shadow:var(--shadow-sm);border:1px solid var(--color-gray-100);transition:var(--transition)}
+    .service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--color-accent)}
+    .service-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-light) 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+    .service-icon i{width:28px;height:28px;color:var(--color-white)}
+    .service-title{font-size:20px;font-weight:600;color:var(--color-primary);margin-bottom:12px}
+    .service-desc{font-size:14px;color:var(--color-text-light);margin-bottom:24px}
+    .service-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--color-accent)}
+    .service-link i{width:16px;height:16px;transition:var(--transition)}
+    .service-link:hover i{transform:translateX(4px)}
+
+    /* Strengths */
+    .strengths{background:var(--color-primary);position:relative;overflow:hidden}
+    .strengths::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,98,0.1) 0%,transparent 70%)}
+    .strengths-header{text-align:center;margin-bottom:60px}
+    .strengths-header .section-title{color:var(--color-white)}
+    .strengths-header .section-desc{color:rgba(255,255,255,0.7);margin:0 auto}
+    .strengths-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .strength-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:32px 24px;text-align:center;transition:var(--transition)}
+    .strength-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-4px)}
+    .strength-number{font-family:var(--font-en);font-size:48px;font-weight:700;color:var(--color-accent);line-height:1;margin-bottom:8px}
+    .strength-number span{font-size:20px}
+    .strength-label{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:16px}
+    .strength-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7}
+
+    /* Process */
+    .process{background:var(--color-gray-50)}
+    .process-header{text-align:center;margin-bottom:60px}
+    .process-header .section-desc{margin:0 auto}
+    .process-timeline{display:flex;justify-content:space-between;position:relative}
+    .process-timeline::before{content:'';position:absolute;top:40px;left:80px;right:80px;height:2px;background:var(--color-gray-200)}
+    .process-step{flex:1;text-align:center;position:relative;padding:0 16px}
+    .process-step-number{width:80px;height:80px;background:var(--color-white);border:3px solid var(--color-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:2}
+    .process-step-number span{font-family:var(--font-en);font-size:28px;font-weight:700;color:var(--color-primary)}
+    .process-step-title{font-size:16px;font-weight:600;color:var(--color-primary);margin-bottom:8px}
+    .process-step-desc{font-size:13px;color:var(--color-text-light);line-height:1.7}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg,var(--color-primary) 0%,#0A1F35 100%);text-align:center;padding:80px 0}
+    .cta-content{max-width:600px;margin:0 auto}
+    .cta-title{font-size:32px;font-weight:700;color:var(--color-white);margin-bottom:16px}
+    .cta-desc{font-size:15px;color:rgba(255,255,255,0.8);margin-bottom:32px}
+    .cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .cta-buttons .btn-primary{background:var(--color-accent);color:var(--color-primary)}
+    .cta-buttons .btn-primary:hover{background:var(--color-accent-light)}
+
+    /* Company */
+    .company-header{text-align:center;margin-bottom:60px}
+    .company-header .section-desc{margin:0 auto}
+    .company-table{max-width:800px;margin:0 auto;background:var(--color-white);border-radius:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+    .company-row{display:flex;border-bottom:1px solid var(--color-gray-100)}
+    .company-row:last-child{border-bottom:none}
+    .company-label{flex-shrink:0;width:180px;padding:20px 24px;background:var(--color-gray-50);font-size:14px;font-weight:500;color:var(--color-primary)}
+    .company-value{flex:1;padding:20px 24px;font-size:14px;color:var(--color-text)}
+
+    /* Contact */
+    .contact{background:var(--color-gray-50)}
+    .contact-header{text-align:center;margin-bottom:60px}
+    .contact-header .section-desc{margin:0 auto}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto}
+    .contact-info{background:var(--color-white);border-radius:12px;padding:40px;box-shadow:var(--shadow-sm)}
+    .contact-info-title{font-size:20px;font-weight:600;color:var(--color-primary);margin-bottom:24px}
+    .contact-info-list{display:flex;flex-direction:column;gap:20px}
+    .contact-info-item{display:flex;align-items:flex-start;gap:16px}
+    .contact-info-icon{flex-shrink:0;width:48px;height:48px;background:var(--color-gray-50);border-radius:8px;display:flex;align-items:center;justify-content:center}
+    .contact-info-icon i{width:20px;height:20px;color:var(--color-accent)}
+    .contact-info-text h4{font-size:14px;font-weight:600;color:var(--color-primary);margin-bottom:4px}
+    .contact-info-text p{font-size:14px;color:var(--color-text-light)}
+    .contact-form{background:var(--color-white);border-radius:12px;padding:40px;box-shadow:var(--shadow-sm)}
+    .form-group{margin-bottom:20px}
+    .form-label{display:block;font-size:14px;font-weight:500;color:var(--color-primary);margin-bottom:8px}
+    .form-label .required{color:#E74C3C;margin-left:4px}
+    .form-input,.form-textarea{width:100%;padding:14px 16px;font-family:var(--font-ja);font-size:14px;border:1px solid var(--color-gray-200);border-radius:6px;transition:var(--transition);background:var(--color-white)}
+    .form-input:focus,.form-textarea:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(201,169,98,0.1)}
+    .form-textarea{min-height:120px;resize:vertical}
+    .form-submit{width:100%;margin-top:8px}
+
+    /* Footer */
+    .footer{background:var(--color-gray-900);color:var(--color-white);padding:60px 0 30px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand .logo-text{color:var(--color-white);margin-bottom:16px}
+    .footer-brand p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.8}
+    .footer-title{font-size:14px;font-weight:600;color:var(--color-white);margin-bottom:20px}
+    .footer-links{display:flex;flex-direction:column;gap:12px}
+    .footer-link{font-size:14px;color:rgba(255,255,255,0.6)}
+    .footer-link:hover{color:var(--color-accent)}
+    .footer-bottom{padding-top:30px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center}
+    .footer-copyright{font-size:13px;color:rgba(255,255,255,0.5)}
+    .footer-social{display:flex;gap:16px}
+    .footer-social a{width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .footer-social a:hover{background:var(--color-accent)}
+    .footer-social i{width:18px;height:18px;color:var(--color-white)}
+
+    /* Mobile Menu */
+    .mobile-menu{position:fixed;top:80px;left:0;right:0;background:var(--color-white);padding:24px;box-shadow:var(--shadow-lg);transform:translateY(-100%);opacity:0;visibility:hidden;transition:var(--transition);z-index:999}
+    .mobile-menu.active{transform:translateY(0);opacity:1;visibility:visible}
+    .mobile-menu .nav-list{flex-direction:column;gap:0}
+    .mobile-menu .nav-link{display:block;padding:16px 0;border-bottom:1px solid var(--color-gray-100)}
+    .mobile-menu .header-cta{width:100%;margin-top:16px}
+
+    /* Responsive */
+    @media(max-width:1024px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .strengths-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      .nav{display:none}
+      .mobile-menu-btn{display:block}
+      .header-inner{height:70px}
+      .hero{min-height:auto;padding:120px 0 80px}
+      .hero-title{font-size:32px}
+      .hero-desc{font-size:15px}
+      .hero-stats{flex-direction:column;gap:24px}
+      .stat-number{font-size:32px}
+      .section{padding:60px 0}
+      .section-title{font-size:26px}
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .about-image-accent{display:none}
+      .services-grid{grid-template-columns:1fr}
+      .strengths-grid{grid-template-columns:1fr;gap:16px}
+      .strength-card{display:flex;align-items:center;text-align:left;gap:20px;padding:24px}
+      .strength-number{font-size:36px;flex-shrink:0;min-width:80px}
+      .strength-label{margin-bottom:4px}
+      .process-timeline{flex-direction:column;gap:24px}
+      .process-timeline::before{display:none}
+      .process-step{display:flex;align-items:flex-start;text-align:left;gap:20px;padding:0}
+      .process-step-number{width:60px;height:60px;margin:0;flex-shrink:0}
+      .process-step-number span{font-size:22px}
+      .contact-grid{grid-template-columns:1fr;gap:24px}
+      .company-row{flex-direction:column}
+      .company-label{width:100%;padding:16px 20px}
+      .company-value{padding:16px 20px}
+      .cta-title{font-size:26px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .footer-bottom{flex-direction:column;gap:20px;text-align:center}
+    }
+    @media(max-width:390px){
+      .container{padding:0 16px}
+      .hero-buttons{flex-direction:column}
+      .hero-buttons .btn{width:100%}
+      .cta-buttons{flex-direction:column}
+      .cta-buttons .btn{width:100%}
+      .contact-info,.contact-form{padding:24px}
+      .service-card{padding:32px 24px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon"><i data-lucide="trending-up"></i></div>
+        <span class="logo-text">NEXUS CAREER</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">私たちについて</a></li>
+          <li><a href="#services" class="nav-link">サービス</a></li>
+          <li><a href="#process" class="nav-link">ご利用の流れ</a></li>
+          <li><a href="#company" class="nav-link">会社概要</a></li>
+          <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary header-cta">無料相談する</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link" onclick="toggleMobileMenu()">私たちについて</a></li>
+        <li><a href="#services" class="nav-link" onclick="toggleMobileMenu()">サービス</a></li>
+        <li><a href="#process" class="nav-link" onclick="toggleMobileMenu()">ご利用の流れ</a></li>
+        <li><a href="#company" class="nav-link" onclick="toggleMobileMenu()">会社概要</a></li>
+        <li><a href="#contact" class="nav-link" onclick="toggleMobileMenu()">お問い合わせ</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary header-cta" onclick="toggleMobileMenu()">無料相談キャリア相談</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-label">
+          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+          新しいキャリアをあなたと共に
+        </div>
+        <h1 class="hero-title">次のキャリアへ、<br><span>確かな一歩</span>を。</h1>
+        <p class="hero-desc">NEXUS CAREERは一人ひとりの可能性を最大化する人材サービス会社です。豊富な求人情報と専任コンサルタントのサポートであなたの理想のキャリアを実現します。</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <i data-lucide="mail" style="width:18px;height:18px;"></i>無料キャリア相談
+          </a>
+          <a href="#services" class="btn btn-outline">
+            <i data-lucide="play" style="width:18px;height:18px;"></i>サービスを見る
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">98<span>%</span></div>
+            <div class="stat-label">転職成功率</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5,000<span>+</span></div>
+            <div class="stat-label">取引企業数</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15,000<span>+</span></div>
+            <div class="stat-label">累計支援実績</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="ビジネスミーティング">
+          <div class="about-image-accent"></div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">一人ひとりの<br>未来に寄り添う</h2>
+          <p class="section-desc">私たちは「人と企業の最適なマッチング」を使命に2026年に設立されました。転職は人生の大きな転機。だからこそ、数字だけでなく、その人の価値観やビジョンを大切にしたサポートを提供します。</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon"><i data-lucide="users"></i></div>
+              <div class="about-feature-text">
+                <h4>専任コンサルタント制</h4>
+                <p>業界経験豊富な専任担当が最後まで伴走します</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon"><i data-lucide="building-2"></i></div>
+              <div class="about-feature-text">
+                <h4>非公開求人多数</h4>
+                <p>大手企業・優良企業の独占求人をご紹介</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon"><i data-lucide="shield-check"></i></div>
+              <div class="about-feature-text">
+                <h4>入社後フォロー</h4>
+                <p>入社後も定期面談で定着をサポート</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <span class="section-label">Services</span>
+        <h2 class="section-title">提供サービス</h2>
+        <p class="section-desc">求職者の方から企業様まで、幅広いニーズにお応えする3つのサービスを展開しています。</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="briefcase"></i></div>
+          <h3 class="service-title">転職支援サービス</h3>
+          <p class="service-desc">キャリアカウンセリングから面接対策、条件交渉まで。あなたの転職活動をワンストップでサポートします。</p>
+          <a href="#contact" class="service-link">詳しく見る<i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="users"></i></div>
+          <h3 class="service-title">人材紹介</h3>
+          <p class="service-desc">企業様の採用課題を解決。ミスマッチを防ぐ独自のマッチングメソッドで最適な人材をご紹介します。</p>
+          <a href="#contact" class="service-link">詳しく見る<i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="graduation-cap"></i></div>
+          <h3 class="service-title">キャリア研修</h3>
+          <p class="service-desc">新入社員研修から管理職向けリーダーシップ研修まで。組織の成長を支える人材育成をサポート。</p>
+          <a href="#contact" class="service-link">詳しく見る<i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="section strengths">
+    <div class="container">
+      <div class="strengths-header">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">選ばれる理由</h2>
+        <p class="section-desc">NEXUS CAREERが多くの方に選ばれている理由をご紹介します。</p>
+      </div>
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <div class="strength-number">98<span>%</span></div>
+          <div>
+            <div class="strength-label">転職成功率</div>
+            <p class="strength-desc">丁寧なヒアリングと的確なマッチングで高い成功率を実現</p>
+          </div>
+        </div>
+        <div class="strength-card">
+          <div class="strength-number">3<span>分</span></div>
+          <div>
+            <div class="strength-label">簡単登録</div>
+            <p class="strength-desc">スマホから3分で完了。すぐにサービスをご利用いただけます</p>
+          </div>
+        </div>
+        <div class="strength-card">
+          <div class="strength-number">0<span>円</span></div>
+          <div>
+            <div class="strength-label">完全無料</div>
+            <p class="strength-desc">求職者の方は全サービスを無料でご利用いただけます</p>
+          </div>
+        </div>
+        <div class="strength-card">
+          <div class="strength-number">24<span>h</span></div>
+          <div>
+            <div class="strength-label">対応時間</div>
+            <p class="strength-desc">オンライン面談でお忙しい方も時間を選ばず相談可能</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process-header">
+        <span class="section-label">Process</span>
+        <h2 class="section-title">ご利用の流れ</h2>
+        <p class="section-desc">登録から内定まで専任コンサルタントが丁寧にサポートします。</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-step-number"><span>01</span></div>
+          <div>
+            <h4 class="process-step-title">無料登録</h4>
+            <p class="process-step-desc">Webフォームから3分で完了。経歴書は後からでも大丈夫です。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number"><span>02</span></div>
+          <div>
+            <h4 class="process-step-title">キャリア面談</h4>
+            <p class="process-step-desc">専任コンサルタントがあなたの希望やキャリアを丁寧にヒアリング。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number"><span>03</span></div>
+          <div>
+            <h4 class="process-step-title">求人紹介</h4>
+            <p class="process-step-desc">非公開求人を含む最適なポジションをご提案します。</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number"><span>04</span></div>
+          <div>
+            <h4 class="process-step-title">内定・入社</h4>
+            <p class="process-step-desc">面接対策から条件交渉、入社後フォローまで徹底サポート。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">あなたの新しいキャリアを<br>一緒に見つけませんか?</h2>
+        <p class="cta-desc">まずは無料相談から。専任コンサルタントがあなたの可能性を引き出します。</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">
+            <i data-lucide="mail" style="width:18px;height:18px;"></i>無料相談に申し込む
+          </a>
+          <a href="tel:03-1234-5678" class="btn btn-outline">
+            <i data-lucide="phone" style="width:18px;height:18px;"></i>03-1234-5678
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company -->
+  <section class="section company" id="company">
+    <div class="container">
+      <div class="company-header">
+        <span class="section-label">Company</span>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+      <div class="company-table">
+        <div class="company-row">
+          <div class="company-label">会社名</div>
+          <div class="company-value">株式会社NEXUS CAREER（ネクサスキャリア）</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">設立</div>
+          <div class="company-value">2024年4月</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">代表者</div>
+          <div class="company-value">代表取締役 山田 太郎</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">所在地</div>
+          <div class="company-value">〒100-0001 東京都千代田区丸の内1-1-1 丸の内ビルディング 10階</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">事業内容</div>
+          <div class="company-value">人材紹介事業 / 転職支援サービス / キャリアコンサルティング / 人材育成研修</div>
+        </div>
+        <div class="company-row">
+          <div class="company-label">許可番号</div>
+          <div class="company-value">有料職業紹介事業許可番号 13-ユ-XXXXXX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-desc">キャリアに関するご相談、採用に関するお問い合わせなど、お気軽にご連絡ください。</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="contact-info-title">お問い合わせ先</h3>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i data-lucide="phone"></i></div>
+              <div class="contact-info-text">
+                <h4>お電話でのお問い合わせ</h4>
+                <p>03-1234-5678（平日 9:00〜18:00）</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i data-lucide="mail"></i></div>
+              <div class="contact-info-text">
+                <h4>メールでのお問い合わせ</h4>
+                <p>info@nexus-career.co.jp</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i data-lucide="map-pin"></i></div>
+              <div class="contact-info-text">
+                <h4>所在地</h4>
+                <p>東京都千代田区丸の内1-1-1<br>丸の内ビルディング 10階</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i data-lucide="clock"></i></div>
+              <div class="contact-info-text">
+                <h4>営業時間</h4>
+                <p>平日 9:00〜18:00（土日祝休み）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">お名前<span class="required">*</span></label>
+              <input type="text" class="form-input" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">メールアドレス<span class="required">*</span></label>
+              <input type="email" class="form-input" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">電話番号</label>
+              <input type="tel" class="form-input" placeholder="090-1234-5678">
+            </div>
+            <div class="form-group">
+              <label class="form-label">お問い合わせ内容<span class="required">*</span></label>
+              <textarea class="form-textarea" placeholder="ご相談内容をご記入ください" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              <i data-lucide="send" style="width:18px;height:18px;"></i>送信する
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon"><i data-lucide="trending-up"></i></div>
+            <span class="logo-text">NEXUS CAREER</span>
+          </div>
+          <p style="margin-top:16px;">一人ひとりの可能性を最大化する人材サービス会社。転職支援から人材紹介、キャリア研修まで、あなたのキャリアを全力でサポートします。</p>
+        </div>
+        <div>
+          <h4 class="footer-title">サービス</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">転職支援サービス</a></li>
+            <li><a href="#services" class="footer-link">人材紹介</a></li>
+            <li><a href="#services" class="footer-link">キャリア研修</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">会社情報</h4>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">私たちについて</a></li>
+            <li><a href="#company" class="footer-link">会社概要</a></li>
+            <li><a href="#" class="footer-link">採用情報</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">サポート</h4>
+          <ul class="footer-links">
+            <li><a href="#contact" class="footer-link">お問い合わせ</a></li>
+            <li><a href="#" class="footer-link">プライバシーポリシー</a></li>
+            <li><a href="#" class="footer-link">利用規約</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2024 NEXUS CAREER Inc. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function toggleMobileMenu(){
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click',function(e){
+        e.preventDefault();
+        var target=document.querySelector(this.getAttribute('href'));
+        if(target){target.scrollIntoView({behavior:'smooth',block:'start'});}
+      });
+    });
+    function handleSubmit(event){
+      event.preventDefault();
+      alert('お問い合わせありがとうございます。\n担当者より2営業日以内にご連絡いたします。');
+      event.target.reset();
+    }
+    window.addEventListener('scroll',function(){
+      var header=document.querySelector('.header');
+      header.style.boxShadow=window.scrollY>100?'0 2px 20px rgba(0,0,0,0.1)':'0 1px 3px rgba(0,0,0,0.08)';
+    });
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.service-card,.strength-card,.process-step,.about-feature').forEach(function(el){
+      el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
